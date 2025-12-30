@@ -3,6 +3,10 @@
 
 # Retail Sales Analytics
 
+  <img width="751" height="485" alt="retail-sales-analytics" src="https://github.com/user-attachments/assets/838639b2-e50e-44c1-989d-9420df4c515e" />
+
+
+ 
 **Project Overview**
 This project demonstrates retail sales analytics using SQL, Python, and Power BI. It includes data cleaning, transformation, analysis, and visualization of sales, customer, product, and inventory data to generate actionable business insights.
 
