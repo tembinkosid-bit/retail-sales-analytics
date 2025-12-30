@@ -1,122 +1,60 @@
-Retail Sales Analytics Project
-Overview
 
-This project demonstrates a Retail Sales Analytics solution using SQL and Power BI. It covers sales, customer, product, and inventory data to provide actionable business insights. The solution includes:
+---
 
-Fact table: fact_sales – transactional sales data, including returns and net sales calculations.
+# Retail Sales Analytics
 
-Dimension tables:
+**Project Overview**
+This project demonstrates retail sales analytics using SQL, Python, and Power BI. It includes data cleaning, transformation, analysis, and visualization of sales, customer, product, and inventory data to generate actionable business insights.
 
-dim_customers – customer demographics and type.
+**Dataset**
 
-dim_products – product details and categories.
+* `fact_sales.csv` – Contains sales transactions, including quantity, price, customer, product, and store details.
+* `dim_customers.csv` – Customer dimension with demographics and customer type.
+* `dim_products.csv` – Product dimension with product details and categories.
+* `dim_inventory.csv` – Inventory dimension with stock levels and supplier information.
 
-dim_inventory – stock levels and supplier information.
+**Technologies & Tools**
 
-Power BI report: Interactive dashboards with sales, revenue, and inventory insights.
+* **SQL Server** – Database creation, ETL, and querying.
+* **Python** – Data cleaning, preparation, and staged CSV exports using Pandas.
+* **Power BI** – Reporting, dashboards, and visual analytics.
 
-Objectives
+**Key Analyses Performed**
 
-Analyze customer behavior by type, gender, and purchase patterns.
+1. Customer analysis: count per type/gender, top customers, and return patterns.
+2. Product analysis: top-selling products, revenue per category, and unsold items.
+3. Inventory analysis: stock levels and supplier-wise quantities.
+4. Sales & revenue: monthly totals, average per store, highest sales days.
+5. Multi-table analysis: customer-product-sales joins for detailed insights.
 
-Identify top-performing products and product categories.
+**Project Structure**
 
-Track inventory levels and low-stock items.
-
-Evaluate sales performance by store and month.
-
-Support business decisions with actionable visualizations.
-
-Project Structure
-retail-sales-analytics-powerbi/
+```
+retail-sales-analytics/
 │
-├─ data/                   # Optional sample CSVs (anonymized)
-├─ SQL/                    # SQL scripts to create and load tables
-├─ reports/                # Power BI .pbix file
-├─ documentation/          # Screenshots, dashboards, and notes
-└─ README.md
+├─ data/
+│   ├─ raw/          # Original CSV files
+│   ├─ staged/       # Cleaned and prepared CSVs
+│   └─ processed/    # CSVs ready for SQL or Power BI
+│
+├─ sql/              # SQL scripts for table creation and queries
+├─ python/           # Python scripts for data cleaning and ETL
+└─ README.md         # Project overview and instructions
+```
 
-Key Features
+**How to Use**
 
-Customer Analysis
+1. Load CSV files into SQL Server or use Python scripts to clean and stage the data.
+2. Run SQL queries for analysis or connect tables to Power BI for visual dashboards.
+3. Explore dashboards to gain insights into sales, customers, products, and inventory trends.
 
-Number of customers per type and gender
+**Author**
+Tembinkosi Vikani Dube – Data Analytics & Engineering
 
-Top 5 customers by total sales
+**Links**
 
-Customers with returns and total return value
+* [LinkedIn](https://www.linkedin.com/in/tembinkosi-vikani-dube)
+* [GitHub Portfolio](https://github.com/tembinkosid-bit/retail-inventory-analytics)
 
-Product Analysis
+---
 
-Top-selling products by quantity
-
-Revenue by product category
-
-Unsold products identification
-
-Inventory Analysis
-
-Products below reorder level or low stock
-
-Stock quantity per supplier
-
-Sales & Revenue
-
-Total sales revenue per month
-
-Average sales per store
-
-Highest sales day analysis
-
-Multi-Table Analysis
-
-Combined insights across customers, products, and stores
-
-Net and gross sales calculation with returns
-
-DAX Measures (Power BI)
-
-Gross Sales
-
-SUMX(Fact_Sales, Fact_Sales[Quantity] * Fact_Sales[Price])
-
-
-Return Sales
-
-SUMX(Fact_Sales, IF(Fact_Sales[Quantity] < 0, ABS(Fact_Sales[Quantity] * Fact_Sales[Price]), 0))
-
-
-Net Sales
-
-SUMX(Fact_Sales, Fact_Sales[Quantity] * Fact_Sales[Price])
-
-
-Monthly Net Sales
-
-CALCULATE([Net Sales], VALUES(Dim_Date[Year-Month]))
-
-Tools & Technologies
-
-Database: SQL Server
-
-ETL / Data Cleaning: Python (Pandas)
-
-Analytics & Visualization: Power BI Desktop
-
-Version Control: Git & GitHub
-
-Usage
-
-Load SQL scripts from SQL/ folder to recreate the database and tables.
-
-Open reports/ Power BI file and connect to your SQL database.
-
-Refresh data to see updated visuals and metrics.
-
-Explore dashboards and filters for insights on customers, products, inventory, and sales.
-
-Author
-
-Tembinkosi Vikani Dube
-LinkedIn 
- | GitHub
