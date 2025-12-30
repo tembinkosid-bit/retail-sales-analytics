@@ -1,0 +1,6 @@
+product_id,product_name,category,price
+1001,Notebook,Stationery,10.5
+1002,Pen,Stationery,20.0
+1003,USB Drive 16GB,Electronics,15.0
+1004,Headphones,Electronics,45.0
+1005,Charger,,25.0
